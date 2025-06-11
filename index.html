@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Product Page</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <header>
-    <h1 class="logo">ShopEase</h1>
-  </header>
+  <div class="container">
+    <div class="product-image">
+      <img src="https://i.imgur.com/FYzW4SB.jpg" alt="Product Image" />
+    </div>
+    <div class="product-details">
+      <h1>Wireless Headphones</h1>
+      <p class="price">₹2,999</p>
+      <p class="description">
+        High-quality wireless headphones with noise cancellation and 20hr battery life.
+      </p>
 
-  <main class="product-container">
-    <section class="product-images">
-      <img id="mainImage" src="assets/product1.jpg" alt="Product" />
-      <div class="thumbnails">
-        <img src="assets/product1.jpg" onclick="changeImage(this.src)" />
-        <img src="assets/product2.jpg" onclick="changeImage(this.src)" />
-        <img src="assets/product3.jpg" onclick="changeImage(this.src)" />
+      <label for="color">Color:</label>
+      <select id="color">
+        <option>Black</option>
+        <option>White</option>
+        <option>Blue</option>
+      </select>
+
+      <label for="size">Size:</label>
+      <select id="size">
+        <option>Small</option>
+        <option>Medium</option>
+        <option>Large</option>
+      </select>
+
+      <div class="quantity-control">
+        <button onclick="decreaseQuantity()">-</button>
+        <input type="number" id="quantity" value="1" readonly />
+        <button onclick="increaseQuantity()">+</button>
       </div>
-    </section>
 
-    <section class="product-details">
-      <h2>Wireless Headphones</h2>
-      <p class="price">₹1,999</p>
-      <p class="description">Experience the freedom of wireless sound with our top-notch headphones.</p>
-
-      <label for="quantity">Quantity:</label>
-      <input type="number" id="quantity" min="1" value="1" />
-
-      <button onclick="addToCart()">Add to Cart</button>
-    </section>
-  </main>
-
-  <div class="cart" id="cart">
-    <h3>Shopping Cart</h3>
-    <div id="cartItems"></div>
-    <p>Total: ₹<span id="totalPrice">0</span></p>
+      <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
